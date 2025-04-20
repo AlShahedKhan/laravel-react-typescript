@@ -40,7 +40,7 @@ const MultiverseCreate: React.FC<MultiverseProps> = ({ multiverse }) => {
         <div className="max-w-2xl mx-auto mt-8 p-6 bg-white rounded shadow">
             <h1 className="text-2xl font-bold mb-6">Create New Multiverse</h1>
 
-            {success && createdMultiverse && (
+            {/* {success && createdMultiverse && (
                 <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
                     <p className="font-bold">Multiverse created successfully!</p>
                     <div className="mt-2">
@@ -50,7 +50,7 @@ const MultiverseCreate: React.FC<MultiverseProps> = ({ multiverse }) => {
                         )}
                     </div>
                 </div>
-            )}
+            )} */}
 
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">

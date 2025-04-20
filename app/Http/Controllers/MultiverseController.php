@@ -17,7 +17,7 @@ class MultiverseController extends Controller
         // Return the list of multiverses to the view via Inertia
         return Inertia::render('multiverse/index', [
             'multiverses' => $multiverses,
-            'flash' => session('flash') ?? [], // Passing flash session data to Inertia
+            'flash' => session('flash') ?? [ ], // Passing flash session data to Inertia
         ]);
     }
     public function store(Request $request)
@@ -32,9 +32,10 @@ class MultiverseController extends Controller
         $multiverse->description = $request->input('description');
         $multiverse->save();
 
-        return Inertia::render('multiverse/index', [
-            'multiverse' => $multiverse,
-        ]);
+        // Flash success message and redirect back to the index page
+        session()->flash('flash', ['success' => 'Multiverse created successfully!']);
+
+        return redirect()->route('multiverse.index');
     }
 
     // Show method to display a specific multiverse
@@ -108,5 +109,4 @@ class MultiverseController extends Controller
 
         return redirect()->route('multiverse.index')->with('error', 'Multiverse not found');
     }
-
 }
