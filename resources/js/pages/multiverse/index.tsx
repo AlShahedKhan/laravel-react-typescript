@@ -18,6 +18,7 @@ interface FlashMessages {
 interface MultiverseIndexProps {
     multiverses: Multiverse[];
 }
+// 
 // Extend the Inertia PageProps type to include flash data
 interface PagePropsWithFlash extends PageProps {
     flash: FlashMessages;
